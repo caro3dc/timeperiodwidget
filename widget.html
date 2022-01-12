@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="cont">
+<div class="vco">
+<p class="h">It is Period <span id=period></span>.</p>
+<p id=message></p>
+</div>
+</div>
+</body>
+<head>
+
+<script>
+function plinko() {
+
+var n = new Date()
+var d = n.getHours();
+console.log(d);
+if (d < 5) {
+	document.getElementById("period").innerHTML = "0";
+	document.getElementById("message").innerHTML = "Go back to sleep.";
+} else if (d == 5) {
+	document.getElementById("period").innerHTML = "0";
+	document.getElementById("message").innerHTML = "Go back to sleep.";
+} else if (d >= 6 && d < 9) {
+	document.getElementById("period").innerHTML = "1";
+	document.getElementById("message").innerHTML = "Go do your tasks.";
+} else if (d >= 9 && d < 12) {
+	document.getElementById("period").innerHTML = "2";
+	document.getElementById("message").innerHTML = "Go do your tasks.";
+} else if (d == 12) {
+	document.getElementById("period").innerHTML = "2½";
+	document.getElementById("message").innerHTML = "Go have lunch.";
+} else if (d >= 13 && d < 16) {
+	document.getElementById("period").innerHTML = "3";
+	document.getElementById("message").innerHTML = "Go do your tasks.";
+} else if (d >= 16 && d < 19) {
+	document.getElementById("period").innerHTML = "4";
+	document.getElementById("message").innerHTML = "Go rest or do your tasks.";
+} else {
+	document.getElementById("period").innerHTML = "5";
+	document.getElementById("message").innerHTML = "Go rest.";
+	}
+	
+	}
+
+plinko()
+</script>
+
+<style>
+html { font-family: sans-serif; }
+.cont { height: 500px; position: relative; background-color: #3C4144; color: #fff; }
+.vco { margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); text-align: center; line-height: 0.7;}
+.h {font-size: 64px; font-weight: 900;}
+#message { font-size: 32px; font-weight: 600; }
+</style>
+</head>
+
+</html>
